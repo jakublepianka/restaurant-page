@@ -353,135 +353,276 @@ template {
 */
 
 @font-face {
-    font-family: "Quicksand";
-    src: url('./Quicksand-VariableFont_wght.ttf');
+  font-family: "Quicksand";
+  src: url('./Quicksand-VariableFont_wght.ttf');
 }
 
 * {
-    font-family: "Quicksand", Verdana, Tahoma, sans-serif ;
-    margin: 0;
-    color: #E9EFEC;
+  font-family: "Quicksand", Verdana, Tahoma, sans-serif ;
+  margin: 0;
+  color: #E9EFEC;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: #16423C;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(sebastian-schuppik-H7xTpvBjJS4-unsplash.jpg);
-    background-size: auto 100vh ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #16423C;
 }
-/* Photo by <a href="https://unsplash.com/@supa_95?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sebastian Schuppik</a> on <a href="https://unsplash.com/photos/tables-and-chairs-inside-building-H7xTpvBjJS4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-       */
+
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* restaurant-inside.jpg Photo by <a href="https://unsplash.com/@supa_95?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sebastian Schuppik</a> on <a href="https://unsplash.com/photos/tables-and-chairs-inside-building-H7xTpvBjJS4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+   food.jpg Photo by <a href="https://unsplash.com/@simplethemes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Casey Lee</a> on <a href="https://unsplash.com/photos/cooked-food-awj7sRviVXo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+   restaurant-outside.jpg Photo by <a href="https://unsplash.com/@odalv?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Odalv</a> on <a href="https://unsplash.com/photos/a-beautiful-building-stands-tall-under-a-cloudy-sky-T4bPYThfmiE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+   food Photo by <a href="https://unsplash.com/@framesforyourheart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Frames For Your Heart</a> on <a href="https://unsplash.com/photos/a-bowl-of-watermelon-salad-with-a-wooden-spoon-czHTMU6T50s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      
+*/
+
+/* header/nav bar v v v  
+   ========================================================================== 
+*/
+
 header {
-    display: flex;
-    justify-content: center;
-    padding: 1.7rem 0;
-    background-color: #16423C99;
-    backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  padding: 1.7rem 0;
+  background-color: #16423C99;
+  backdrop-filter: blur(10px);
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    width: 60%;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  flex-wrap: wrap;
 }
 
 nav button {
-    position: relative;
-    flex: 1 1 0;
-    min-width: 100px;
-    padding: 0.7rem 0;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
-    border: 0;
-    background: none;
-    cursor: pointer;
+  position: relative;
+  flex: 1 1 0;
+  min-width: 100px;
+  padding: 0.7rem 0;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
 nav button::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #6A9C89;
-    transform-origin: center;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #6A9C89;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 nav button:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-#content {
-    display: grid;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+/* header/nav bar ^ ^ ^ 
+   ========================================================================== 
+*/
+
+/* Home styles v v v 
+   ========================================================================== 
+*/
+
+#background.home {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(restaurant-inside.jpg);
+  background-size: auto 100vh ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+#content.home {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 400px;
-    background-color: #16423C99;
-    border-radius: 1rem;
-    padding: 1rem 0;
-    height: fit-content;
-    transform: translateY(-10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  background-color: #16423C99;
+  border-radius: 1rem;
+  padding: 1rem 0;
+  height: fit-content;
+  transform: translateY(-10%);
 }
 
-@media (max-width: 403px){
-    .logo {
-        height: 100vw;
-    }
+@media (max-width: 392px){
+  .logo {
+    height: 100vw;
+  }
+  .main-container {
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 333px){
-    .main-container {
-        position: relative;
-        transform: translateY(0);
-    }
-
+  .main-container {
+    position: relative;
+  }
 }
 
 .main-header {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .logo {
-    max-height: 300px;
+  max-height: 300px;
 }
 
 .main-info {
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 0 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .main-footer {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-top: 1.4rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 1.4rem;
 }
 
 .footer-image {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
+
+/* Home styles ^ ^ ^
+   Menu styles v v v
+   ========================================================================== 
+*/
+
+#background.menu {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(food.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+#content.menu {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #16423C99;
+  border-radius: 1rem;
+  padding: 2rem 1.2rem;
+  transform: translateY(-2%);
+}
+
+.menu-card-header {
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.menu-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.menu-section-title {
+  text-align: center;
+  padding: 0.5rem 0;
+  letter-spacing: 0.3rem;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem;
+}
+
+.item-price {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 563px) {
+  #background.menu {
+    background-attachment: scroll;
+  }
+
+  .menu-card {
+    border-radius: 0;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+  }
+  
+  .menu-card-header {
+    padding-bottom: 1.5rem;
+  }
+
+  .menu-section-title {
+    padding: 0.8rem 0;
+  }
+}
+
+
+
+/* Menu styles ^ ^ ^
+   ========================================================================== 
+*/
+
