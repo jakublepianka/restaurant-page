@@ -357,6 +357,7 @@ template {
   src: url('./Quicksand-VariableFont_wght.ttf');
 }
 
+
 * {
   font-family: "Quicksand", Verdana, Tahoma, sans-serif ;
   margin: 0;
@@ -380,6 +381,7 @@ ul, li {
   padding: 0;
   margin: 0;
 }
+
 
 /* restaurant-inside.jpg Photo by <a href="https://unsplash.com/@supa_95?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sebastian Schuppik</a> on <a href="https://unsplash.com/photos/tables-and-chairs-inside-building-H7xTpvBjJS4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
    food.jpg Photo by <a href="https://unsplash.com/@simplethemes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Casey Lee</a> on <a href="https://unsplash.com/photos/cooked-food-awj7sRviVXo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
@@ -438,6 +440,7 @@ nav button:hover::after {
   transform: scaleX(1);
 }
 
+
 /* header/nav bar ^ ^ ^ 
    ========================================================================== 
 */
@@ -456,6 +459,7 @@ nav button:hover::after {
   background-position: center;
   background-attachment: fixed;
   z-index: 0;
+  overflow-y: hidden;
 }
 
 #content.home {
@@ -465,6 +469,22 @@ nav button:hover::after {
   height: 100%;
   justify-content: center;
   align-items: center;
+
+  animation-name: homeSlide;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-delay: 800ms;
+}
+
+@keyframes homeSlide {
+  from {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .main-container {
@@ -479,10 +499,13 @@ nav button:hover::after {
   height: fit-content;
   transform: translateY(-10%);
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.5);
-
 }
 
 @media (max-width: 392px){
+  #background.home {
+    overflow-y: visible;
+  }
+
   .logo {
     height: 100vw;
   }
@@ -501,7 +524,9 @@ nav button:hover::after {
 }
 
 @media (max-height: 874px) {
-
+  #background.home {
+    overflow-y: visible;
+  }
 
   .main-container {
     margin: 2rem 0 2rem;
@@ -553,6 +578,7 @@ nav button:hover::after {
   background-position: center;
   background-attachment: fixed;
   z-index: 0;
+  overflow-x: hidden;
 }
 
 #content.menu {
@@ -562,6 +588,22 @@ nav button:hover::after {
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  animation-name: menuSlide;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-delay: 800ms;
+}
+
+@keyframes menuSlide {
+  from {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .menu-container {
@@ -569,6 +611,7 @@ nav button:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .menu-card {
@@ -665,6 +708,8 @@ nav button:hover::after {
   background-position: right 80%;
   background-attachment: fixed;
   z-index: 0;
+  overflow-x: hidden;
+
 }
 
 #content.about {
@@ -677,6 +722,8 @@ nav button:hover::after {
 
 }
 
+
+
 @media (max-width:663px) {
   #background.about {
     background-position: center;
@@ -686,6 +733,22 @@ nav button:hover::after {
 .about-logo {
   max-width: 75%;
   margin: 1.5rem 0 0;
+
+  animation-name: aboutLogoSlide;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+  animation-delay: 800ms;
+}
+
+@keyframes aboutLogoSlide {
+  from {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .about-card {
@@ -700,6 +763,22 @@ nav button:hover::after {
   box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(15px);
 
+  animation-name: aboutCardSlide;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+  animation-delay: 800ms;
+
+}
+
+@keyframes aboutCardSlide {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .about-card-header {
@@ -785,6 +864,9 @@ nav button:hover::after {
   height: 100%;
   align-items: center;
   flex-wrap: wrap;
+  
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-container {
@@ -796,6 +878,20 @@ nav button:hover::after {
   box-shadow: 
     inset 0 10px 10px -10px rgba(0, 0, 0, 0.5),
     inset 0 -10px 10px -10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  animation-name: contactFadeIn;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+}
+
+@keyframes contactFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .contact-header {
@@ -831,7 +927,24 @@ nav button:hover::after {
   min-width: 300px;
   border-radius: 1rem;
   box-shadow: 3px 4px 8px 2px rgba(0, 0, 0, 0.5);
+
+  animation-name: infoCardsSlide;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+  animation-delay: 1100ms;
 }
+
+@keyframes infoCardsSlide {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 .info-card-header {
   font-weight: 300;
