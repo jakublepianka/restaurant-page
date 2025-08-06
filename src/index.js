@@ -1,8 +1,7 @@
 import { hometabLoad } from "./hometab.js";
 import { menutabLoad } from "./menutab.js";
+import { abouttabLoad } from "./abouttab.js";
 import "./styles.css";
-
-let counter = 0;
 
 const navBar = (function(){
     
@@ -11,41 +10,42 @@ const navBar = (function(){
     const homeBtn = document.querySelector('#home-button');
     const menuBtn = document.querySelector('#menu-button');
     const aboutBtn = document.querySelector('#about-button');
-    const newsBtn = document.querySelector('#news-button');
     const contactBtn = document.querySelector('#contact-button');
+
+    hometabLoad.setTab();
 
     function changeToHome(){
         homeBtn.addEventListener("click", () => {
-            hometabLoad.content.replaceChildren();
+            content.replaceChildren();
             hometabLoad.setTab();
         });
     }
 
     const changeToMenu = function(){
         menuBtn.addEventListener("click", () => {
-            hometabLoad.content.replaceChildren();
+            content.replaceChildren();
             menutabLoad.setTab();
-            //Call for function which applies Menu view
         })
     }
 
     function changeToAbout(){
-
-    }
-
-    function changeToNews(){
-
+        aboutBtn.addEventListener("click", () => {
+            content.replaceChildren();
+            abouttabLoad.setTab();
+        });
     }
 
     function changeToContact(){
-
+        contactBtn.addEventListener("click", () => {
+            content.replaceChildren();
+            contacttabLoad.setTab();
+        })
     }
 
     function initButtons(){
         changeToHome();
         changeToMenu();
         changeToAbout();
-        changeToNews();
         changeToContact();
     }
 
@@ -55,8 +55,5 @@ const navBar = (function(){
 
 })();
 
-hometabLoad.setTab();
-navBar.initButtons();
 
-counter++;
-console.log(counter);
+navBar.initButtons();

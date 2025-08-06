@@ -36,7 +36,7 @@ export const menutabLoad = (function(){
         const bg = document.getElementById('background');
         bg.removeAttribute('class');
         bg.classList.add('menu');
-        bg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url${foodBackground}`;
+        bg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${foodBackground})`;
     }
 
     function changeContentClass(){
@@ -48,10 +48,10 @@ export const menutabLoad = (function(){
     function setTab(){
         changeBgClass();
         changeContentClass();
-        setMenuCard();
+        createMenuCard();
     }
 
-    function setMenuCard(){
+    function createMenuCard(){
         const menuCard = document.createElement('div');
         const menuCardHeader = document.createElement('div');
         const menuCardTitle = document.createElement('h3');
@@ -110,7 +110,6 @@ export const menutabLoad = (function(){
     }
     
     return {
-        content,
         setTab
     }
 

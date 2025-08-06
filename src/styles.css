@@ -398,6 +398,7 @@ header {
   padding: 1.7rem 0;
   background-color: #16423C99;
   backdrop-filter: blur(10px);
+  box-shadow: blur(10px) 0 10px 10px 10px;
 }
 
 nav {
@@ -449,8 +450,7 @@ nav button:hover::after {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(restaurant-inside.jpg);
-  background-size: auto 100vh ;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -477,6 +477,8 @@ nav button:hover::after {
   padding: 1rem 0;
   height: fit-content;
   transform: translateY(-10%);
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 @media (max-width: 392px){
@@ -487,6 +489,7 @@ nav button:hover::after {
     backdrop-filter: blur(10px);
     transform: translateY(0);
     border-radius: 0;
+    box-shadow: none;
   }
 }
 
@@ -494,6 +497,17 @@ nav button:hover::after {
   .main-container {
     position: relative;
   }
+}
+
+@media (max-height: 874px) {
+
+
+  .main-container {
+    margin: 2rem 0 2rem;
+    transform: translateY(0);
+  }
+  
+
 }
 
 .main-header {
@@ -533,7 +547,6 @@ nav button:hover::after {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(food.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -564,13 +577,14 @@ nav button:hover::after {
   border-radius: 1rem;
   padding: 2rem 1.2rem;
   transform: translateY(-2%);
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 .menu-card-header {
-  letter-spacing: 0.2rem;
   font-weight: 700;
   font-size: 2rem;
-  letter-spacing: 1rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   padding-bottom: 2rem;
 }
@@ -609,6 +623,7 @@ nav button:hover::after {
     border-radius: 0;
     backdrop-filter: blur(10px);
     transform: translateY(0);
+    box-shadow: none;
   }
   
   .menu-card-header {
@@ -620,9 +635,131 @@ nav button:hover::after {
   }
 }
 
+@media (max-height: 874px) {
+  #background.menu {
+    background-attachment: scroll;
+  }
 
+  .menu-card {
+    margin: 2rem 0 2rem;
+    transform: translateY(0);
+  }
+  
+
+}
 
 /* Menu styles ^ ^ ^
    ========================================================================== 
-*/
+   About styles v v v
+*/ 
 
+#background.about {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 80%;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+#content.about {
+  flex: 1 1 0;
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+@media (max-width:663px) {
+  #background.about {
+    background-position: center;
+  }
+}
+
+.about-logo {
+  max-width: 75%;
+  margin: 1.5rem 0 0;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  background-color: #16423C99;
+  border-radius: 1rem;
+  padding-bottom: 1rem;
+  height: fit-content;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+
+}
+
+.about-card-header {
+  flex: 1 1 auto;
+}
+
+.about-card-header-image {
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+
+.about-card-body {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  padding: 2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+}
+
+.about-restaurant {
+  padding-bottom: 1.6rem;
+}
+
+
+@media (max-height: 950px) {
+  .about-card {
+    margin: 1.2rem 0.8rem 0.8rem 0.8rem;
+  }
+}
+
+
+@media (max-width: 1193px) {
+  #content.about {
+    align-items: center;
+  }
+
+  .about-card {
+    /* margin-right: 0; */
+    margin: 1.2rem 0.8rem 0.8rem 0.8rem;
+    box-shadow: none;
+
+  }
+}
+
+@media (max-width: 502px) {
+  .about-card {
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .about-card-header-image {
+    border-radius: 0;
+  }
+
+  .about-card {
+    max-height: fit-content;
+    box-shadow: none;  
+  }
+
+}
+
+/* About styles ^ ^ ^
+   ========================================================================== 
+   Contact styles v v v
+*/ 

@@ -10,7 +10,7 @@ export const hometabLoad = (function(){
         const bg = document.getElementById('background');
         bg.removeAttribute('class');
         bg.classList.add('home');
-        bg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url${restaurantInside}`;
+        bg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${restaurantInside})`;
     }
 
     function changeContentClass(){
@@ -76,7 +76,6 @@ export const hometabLoad = (function(){
     
 
     return {
-        content,
         setTab
     }
 
