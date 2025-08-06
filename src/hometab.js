@@ -17,15 +17,16 @@ export const hometabLoad = (function(){
         const content = document.getElementById('content');
         content.removeAttribute('class');
         content.classList.add('home');
+        
     }
 
     function setTab(){
         changeBgClass();
         changeContentClass();
-        setHomeCard();
+        createHomeCard();
     }
 
-    function setHomeCard(){
+    function createHomeCard(){
         const mainContainer = document.createElement('div');
         const mainHeader = document.createElement('div');
         const mainInfo = document.createElement('div');
