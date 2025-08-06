@@ -1,6 +1,7 @@
 import ig from "./instagram.png";
 import fb from "./facebook.png";
 import x from "./twitter.png";
+import contactBg from "./contact-bg.jpg";
 
 export const contacttabLoad = (function(){
 
@@ -8,7 +9,7 @@ export const contacttabLoad = (function(){
         const bg = document.getElementById('background');
         bg.removeAttribute('class');
         bg.classList.add('contact');
-        bg.style.backgroundImage = ``;
+        bg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${contactBg})`;
     }
 
     function changeContentClass(){
@@ -53,10 +54,6 @@ export const contacttabLoad = (function(){
         ];
 
         
-
-
-
-
         const igLink = document.createElement('a');
         const fbLink = document.createElement('a');
         const xLink = document.createElement('a');
