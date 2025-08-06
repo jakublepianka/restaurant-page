@@ -1,6 +1,7 @@
 import { hometabLoad } from "./hometab.js";
 import { menutabLoad } from "./menutab.js";
 import { abouttabLoad } from "./abouttab.js";
+import { contacttabLoad } from "./contacttab.js";
 import "./styles.css";
 
 const navBar = (function(){
